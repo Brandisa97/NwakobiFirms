@@ -193,33 +193,35 @@
                                 
                             </div>
                             
-                            <form class="appoinment-form" data-netlify="true" netlify-honeypot="bot-field"> 
-                                <div class="form-group col-md-6">
-                                    <label for="your_name">Your Name: </label>
-                                    <input id="your_name" class="form-control" type="text"  required="" data-msg="This field is required.">
-                                    <i class="fa fa-user-o"></i>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="your_name">Your Email: </label>
-                                    <input id="your_email" class="form-control" type="email"  required="" data-msg="This field is required.">
-                                    <i class="fa fa-envelope-o"></i>
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label for="your_phone">Appointment Title: </label>
-                                    <input id="your_phone" class="form-control" type="text"  required="" data-msg="This field is required.">
-                                    <i class="fa fa-pencil"></i>
-                                </div>
+                           <form name="appoinment-form" class="appoinment-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="appoinment-form">
+    <p style="display:none;">
+        <label>Don’t fill this out: <input name="bot-field"></label>
+    </p>
+    <div class="form-group col-md-6">
+        <label for="your_name">Your Name: </label>
+        <input id="your_name" name="name" class="form-control" type="text" required data-msg="This field is required.">
+        <i class="fa fa-user-o"></i>
+    </div>
+    <div class="form-group col-md-6">
+        <label for="your_email">Your Email: </label>
+        <input id="your_email" name="email" class="form-control" type="email" required data-msg="This field is required.">
+        <i class="fa fa-envelope-o"></i>
+    </div>
+    <div class="form-group col-md-12">
+        <label for="your_phone">Appointment Title: </label>
+        <input id="your_phone" name="title" class="form-control" type="text" required data-msg="This field is required.">
+        <i class="fa fa-pencil"></i>
+    </div>
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+        <label for="textarea_message">Message: </label>
+        <textarea id="textarea_message" name="message" class="form-control" rows="4" required data-msg="This field is required."></textarea>
+    </div>         
+    <div class="form-group col-md-12 col-sm-12 col-xs-12 text-center">
+        <button id="btn_submit" class="btn btn-lg btn-theme btn-square btn-theme-invert" type="submit">Get Appointment</button>
+    </div>
+</form>
 
-                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                    <label for="textarea_message">Message: </label>
-                                    <textarea id="textarea_message" class="form-control" rows="4"  required="" data-msg="This field is required."></textarea>
-                                </div>         
-
-                                <div class="form-group col-md-12 col-sm-12 col-xs-12 text-center">
-                                    <button id="btn_submit" class="btn btn-lg btn-theme btn-square btn-theme-invert" type="submit">Get Appointment</button>
-                                </div>
-
-                            </form>
 
                         </div> <!-- end .appointment-form-wrapper  -->
 
