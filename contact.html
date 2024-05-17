@@ -264,6 +264,7 @@
                     <form name="Contact Form"  method="post" id="contact-form2" data-netlify="true" netlify-honeypot="bot-field"  onsubmit="showPopup(event)">
     <!-- Hidden input field for Netlify form submissions -->
     <input type="hidden" name="form-name" value="contact-form">
+                       <input type="hidden" name="subject" value="New Contact Form Message">
     <div style="display: none;">
         <label>Don’t fill this out if you're human: <input name="bot-field"></label>
     </div>
@@ -288,7 +289,7 @@
         <div class="popup-content">
             <span class="close" onclick="closePopup()">&times;</span>
             <h2>Thank You!</h2>
-            <p>Your appointment request has been submitted successfully.</p>
+            <p>Your message has been sent successfully.</p>
             <button class="btn-theme" onclick="closePopup()">Close</button>
         </div>
     </div>
