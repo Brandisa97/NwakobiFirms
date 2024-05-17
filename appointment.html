@@ -22,6 +22,58 @@
     <link href="css/animate.css" rel="stylesheet" type="text/css" />
     <link href="css/venobox.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
+
+       <style>
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 9;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6); /* Darker overlay */
+            padding-top: 60px;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 40px; /* Increased padding */
+            border-radius: 10px; /* Rounded corners */
+            width: 50%; /* Made larger */
+            max-width: 600px; /* Max width */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow */
+            text-align: center; /* Centered text */
+        }
+
+        .popup-content h2 {
+            margin-bottom: 20px; /* Space below the heading */
+            font-size: 24px; /* Larger heading font size */
+        }
+
+        .popup-content p {
+            font-size: 18px; /* Larger text size */
+            margin-bottom: 30px; /* Space below the text */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+      
+    </style>
 </head>
 
     <body> 
@@ -474,6 +526,37 @@
 <!--        <script src="https://maps.google.com/maps/api/js?sensor=true&key=AIzaSyB8asWf-NyxR0dTHf_OMY9iT_lRncQG8x8 "></script>
         <script src="js/jquery.gmap.min.js"></script>-->
         <script src="js/custom-scripts.js"></script>
+
+        <script>
+        function showPopup(event) {
+            event.preventDefault();
+            // Show the popup
+            document.getElementById("popup").style.display = "block";
+
+            // Submit the form data to Netlify using AJAX
+            const form = event.target;
+            const data = new FormData(form);
+
+            fetch("/", {
+                method: "POST",
+                body: data
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Optionally handle success here
+                } else {
+                    // Optionally handle error here
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
     </body>
 
 </html>
