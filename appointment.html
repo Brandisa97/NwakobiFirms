@@ -23,9 +23,7 @@
     <link href="css/venobox.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
 
-   
-    <!-- Other head content -->
-    <style>
+       <style>
         .popup {
             display: none;
             position: fixed;
@@ -35,17 +33,29 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.4);
+            background-color: rgba(0, 0, 0, 0.6); /* Darker overlay */
             padding-top: 60px;
         }
 
         .popup-content {
-            background-color: #fefefe;
+            background-color: #fff;
             margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
+            padding: 40px; /* Increased padding */
+            border-radius: 10px; /* Rounded corners */
+            width: 50%; /* Made larger */
+            max-width: 600px; /* Max width */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow */
+            text-align: center; /* Centered text */
+        }
+
+        .popup-content h2 {
+            margin-bottom: 20px; /* Space below the heading */
+            font-size: 24px; /* Larger heading font size */
+        }
+
+        .popup-content p {
+            font-size: 18px; /* Larger text size */
+            margin-bottom: 30px; /* Space below the text */
         }
 
         .close {
@@ -57,12 +67,13 @@
 
         .close:hover,
         .close:focus {
-            color: black;
+            color: #000;
             text-decoration: none;
             cursor: pointer;
         }
+
+      
     </style>
-    
 </head>
 
     <body> 
@@ -122,10 +133,10 @@
                                             <div class="icon-container">
                                                 <i class="fa fa-building-o"></i>
                                             </div>
-                                            <div class="text">
+                                                                                        <div class="text">
                                                 <span class="head-heading">OFFICE ADDRESS</span>                                                
-                                                <span class="head-content">
-                                                    32 Road, House 19, Glo Building, Festac Town, Lagos 102312
+                                                <span class="head-content"><a href="https://maps.app.goo.gl/bybXmAhFEmSgW6b37">
+                                                    32 Road, House 19, Glo Building, Festac Town, Lagos 102312</a>
                                                 </span>
                                             </div>
                                         </div><!-- end .repair-icon-box  -->
@@ -139,8 +150,10 @@
                                             <div class="text">
                                                 <span class="head-heading">WORKING HOURS</span>                                                
                                                 <span class="head-content">
-                                                    Mon-Sat <br>
+                                                    Mon-Fri:
                                                     8:00PM - 6:00PM
+                                                    <br>
+                                                    Sat & Sun <br>Special Appointments
                                                 </span>
                                             </div>
                                         </div><!-- end .header-icon-box  -->
@@ -234,8 +247,9 @@
                                 
                             </div>
                             
-                           <form name="appointment-form" class="appointment-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="showPopup(event)">
-    <input type="hidden" name="form-name" value="appointment-form">
+  <form name="Appointment-form" class="appoinment-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="showPopup(event)">
+    <input type="hidden" name="form-name" value="Appointment-form">
+    <input type="hidden" name="subject" value="New Appointment Request">
     <p style="display:none;">
         <label>Don’t fill this out: <input name="bot-field"></label>
     </p>
@@ -263,14 +277,15 @@
     </div>
 </form>
 
-<div id="popup" class="popup">
-    <div class="popup-content">
-        <span class="close" onclick="closePopup()">&times;</span>
-        <p>Thank you for your submission!</p>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Thank You!</h2>
+            <p>Your appointment request has been submitted successfully.</p>
+            <button class="btn-theme" onclick="closePopup()">Close</button>
+        </div>
     </div>
-</div>
-
-
 
                         </div> <!-- end .appointment-form-wrapper  -->
 
@@ -289,8 +304,7 @@
                             
          
         <!-- START FOOTER  -->
-
-        <footer class="section-pure-black-bg">            
+ <footer class="section-pure-black-bg">            
 
             <section class="footer-widget-area footer-widget-area-bg section-custom-bg" data-bg_img="images/footer_bg.jpg" data-bg_color="#111111" data-bg_opacity="0.80">
 
@@ -312,25 +326,18 @@
                                         </div>  <!--  end .footer-widget-header -->   
 
                                        <div class="footer-about-text margin-top-16">
-                                          The Nwakobi Firms has expanded to establish multiple full-service centers. We deliver top-tier legal services across town.
+                                          The Nwakobi Firms is dedicated to helping our clients achieve their legal objectives.
                                        </div>    
 
 
                                         <div class="social-icons margin-top-24">
 
-                                            <a href="#">
+                                            <a href="https://www.instagram.com/nwakobifirms">
                                                 <i class="fa fa-facebook"></i>
                                             </a>
+                                           
 
-                                            <a href="#">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-
-                                            <a href="#">
-                                                <i class="fa fa-pinterest-p"></i>
-                                            </a>
-
-                                            <a href="#">
+                                            <a href="https://www.instagram.com/nwakobifirms">
                                                 <i class="fa fa-instagram"></i>
                                             </a>
 
@@ -420,9 +427,9 @@
 
                                     <div class="textwidget">                                       
 
-                                        <i class="fa fa-envelope-o fa-contact"></i> <p><a href="#">info@nwakobifirms.com</a><br/><a href="#">info@nwakobifirms.com</a></p>
+                                        <i class="fa fa-envelope-o fa-contact"></i> <p><a href="mailto:nwakobifirms@gmail.com">nwakobifirms@gmail.com</a><br><a href="mailto:info@nwakobifirms.com">info@nwakobifirms.com</a></p>
 
-                                        <i class="fa fa-location-arrow fa-contact"></i> <p>Festac Town<br/>Lagos, Nigeria</p>
+                                        <i  class="fa fa-location-arrow fa-contact"></i> <p> <a href="https://maps.app.goo.gl/bybXmAhFEmSgW6b37"> 32 Road, House 19,<br/>Glo Building, Festac Town, <br>Lagos 102312</a></p>
 
                                         <i class="fa fa-phone fa-contact"></i> <p> (+234) 703 350 0008
 <br/>(+234) 818 151 8818</p>                              
@@ -448,13 +455,13 @@
                                     <div class="textwidget">
                                         <ul class="opening-shedule">
                                             <li class="clearfix">
-                                                <span> Mon - Sat : </span>
+                                                <span> Mon - Fri : </span>
                                                 <div class="pull-right"> 8.00 AM - 6.00 PM</div>                                            
                                             </li>
                                             <li>
                                              
-                                                <span> Sunday :</span>
-                                                <div class="pull-right"> Closed</div>                                            
+                                                <span> Sat & Sun :</span>
+                                                <div class="pull-right"> Special appointments</div>                                            
                                             </li>                                        
                                         </ul>
 
@@ -514,19 +521,37 @@
 <!--        <script src="https://maps.google.com/maps/api/js?sensor=true&key=AIzaSyB8asWf-NyxR0dTHf_OMY9iT_lRncQG8x8 "></script>
         <script src="js/jquery.gmap.min.js"></script>-->
         <script src="js/custom-scripts.js"></script>
+
         <script>
-    function showPopup(event) {
-        event.preventDefault();
-        // Optionally, you can submit the form data via AJAX here
-        document.querySelector('.appointment-form').submit();
-        document.getElementById("popup").style.display = "block";
-    }
+        function showPopup(event) {
+            event.preventDefault();
+            // Show the popup
+            document.getElementById("popup").style.display = "block";
 
-    function closePopup() {
-        document.getElementById("popup").style.display = "none";
-    }
-</script>
+            // Submit the form data to Netlify using AJAX
+            const form = event.target;
+            const data = new FormData(form);
 
+            fetch("/", {
+                method: "POST",
+                body: data
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Optionally handle success here
+                } else {
+                    // Optionally handle error here
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
     </body>
 
 </html>
